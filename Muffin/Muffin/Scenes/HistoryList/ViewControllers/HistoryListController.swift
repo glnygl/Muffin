@@ -8,10 +8,15 @@
 
 import UIKit
 
-final class HistoryListController: UIViewController {
+final class HistoryListController: BaseViewController {
+    
+    let viewModel = HistoryListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.setViewModel(controller: self) {
+            viewModel.fetchHistories()
+        }
     }
 
 }

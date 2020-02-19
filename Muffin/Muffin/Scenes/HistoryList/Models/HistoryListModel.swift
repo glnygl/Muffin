@@ -27,5 +27,10 @@ struct HistoryData: Codable {
 
 struct History: Codable {
     let year: String?
-    let text: String?
+    let description: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case year
+        case description = "text"
+    }
 }

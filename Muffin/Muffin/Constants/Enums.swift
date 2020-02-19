@@ -9,7 +9,29 @@
 import Foundation
 
 enum CellType: String {
-    case WeatherListTableCell
-    case WeatherDayListTableCell
-    case CountryListTableCell
+    case HistoryListTableCell
+}
+
+enum HistorySectionNumber: Int, CaseIterable {
+    case events
+    case births
+    case deaths
+    
+    static var allCases: [HistorySectionNumber] {
+        return [.events, .births, .deaths]
+    }
+}
+
+enum HistorySectionType: String {
+    case events = "Events"
+    case births = "Births"
+    case deaths = "Deaths"
+    
+    static var allCases: [HistorySectionType] {
+        return [.events, .births, .deaths]
+    }
+}
+
+enum Constants {
+    static let historyListTitle = "Muffin"
 }
